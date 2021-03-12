@@ -1,18 +1,19 @@
 const fs = require('fs');
-
-const crearArchivo = async(base = 5, listar = false) =>{
+const colors = require('colors');
+const crearArchivo = async(base = 5, listar = false, hasta = 10) =>{
     //return 'hola mundo';
     try{
-        let salida ='';
-        for (let i = 1; i <= 10; i++) {
+        let salida, consola ='';
+        for (let i = 1; i <= hasta; i++) {
             multi = base * i;
             salida += `${base} x ${i} = ${multi}\n`;
+            consola += `${base} ${'x'.bgBlue} ${i} ${'='.bgBlue} ${multi}\n`;
         }
         fs.writeFileSync(`tabla-${base}.txt`, salida);
         if(listar){
-            console.log(`==========================`)
-            console.log(`=======TABLA DEL ${base}========`)
-            console.log(`==========================`)
+            console.log(`==========================`.blue)
+            console.log('TABLA DEL'.white,colors.green( base ));
+            console.log(`==========================`.blue)
             console.log(salida);
         }
         return `tabla-${base}.txt`;
