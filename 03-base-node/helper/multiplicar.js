@@ -9,13 +9,14 @@ const crearArchivo = async(base = 5, listar = false, hasta = 10) =>{
             salida += `${base} x ${i} = ${multi}\n`;
             consola += `${base} ${'x'.bgBlue} ${i} ${'='.bgBlue} ${multi}\n`;
         }
-        fs.writeFileSync(`tabla-${base}.txt`, salida);
+        fs.writeFileSync(`./salida/tabla-${base}.txt`, salida);
         if(listar){
             console.log(`==========================`.blue)
             console.log('TABLA DEL'.white,colors.green( base ));
             console.log(`==========================`.blue)
             console.log(salida);
         }
+        //para reconstruir los modulos de node o los paquetes se debe ejecutar npm install
         return `tabla-${base}.txt`;
     }catch (error){
         
