@@ -7,9 +7,9 @@ const mostrarMenu = () => {
 
     return new Promise(resolve =>{
         console.clear();
-        console.log('\n=========================='.green)
-        console.log('==seleccione una opción===')
-        console.log('==========================\n'.green)
+        console.log('\n=========================='.green);
+        console.log('==seleccione una opción===');
+        console.log('==========================\n'.green);
 
         console.log(`${'1.'.green} Crear tareas`);
         console.log(`${'2.'.green} Listar tareas`);
